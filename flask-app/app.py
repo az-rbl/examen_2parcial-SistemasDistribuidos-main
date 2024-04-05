@@ -30,7 +30,7 @@ def get_paquetes():
     for paquete in paquetes:
         paquete_datos ={'id_paquete': paquete.id_paquete, 'estado': paquete.estado}
         resultado.append(paquete_datos)
-    return jsonify(paquete_datos)
+    return jsonify(resultado)
 
 @app.route('/paquete', methods=['POST'])
 def registrar_paquete():

@@ -1,6 +1,18 @@
 from flask import Flask, jsonify, request
+import os
+from flask_sqlalchemy import SQLAlchemy
+
+
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://postgres:postgres@db/mydatabase'
+
+db = SQLAlchemy(app)
+
+class Paquete(db.Model):
+    id_paquete = db.Column(db.Integer, primary_key=True)
+    estado = db.Column(db.String(50))
+
 
 paquetes = {} #TODO: Cambiar a una base de datos
 

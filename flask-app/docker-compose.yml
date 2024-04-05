@@ -9,3 +9,9 @@ services:
       - FLASK_ENV=development
     volumes:
       - .:/app
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    external: true
